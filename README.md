@@ -10,7 +10,9 @@ Componentes:
 ## Descrição do objetivo da proposta
 
 O projeto consiste no desenvolvimento de uma aplicação web utilizando Python e Flask, com o objetivo de permitir que o próprio usuário cadastre filmes em um site de forma simples e organizada.
+
 A proposta é criar um sistema onde cada filme tenha um cadastro único, evitando registros duplicados. Após o cadastro, o filme será exibido na página principal do site, mostrando suas principais informações, como título, ano de lançamento, gênero, sinopse, avaliação e outras características relevantes.
+
 O sistema busca resolver o problema da falta de organização no registro de filmes, oferecendo uma plataforma centralizada onde o usuário pode cadastrar, visualizar, editar e excluir informações de maneira prática.
 A página inicial funcionará como uma vitrine ou catálogo, apresentando todos os filmes cadastrados com suas respectivas informações, facilitando a consulta e a navegação pelos conteúdos disponíveis.
 
