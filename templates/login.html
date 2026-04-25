@@ -5,7 +5,7 @@
 {% block content %}
 <h2>Login</h2>
 
-<form method="POST">
+<form action="{{url_for('comeco')}}" method="POST">
     <label>Email:</label>
     <input type="email" name="email" required>
 
@@ -15,5 +15,5 @@
     <button type="submit">Entrar</button>
 </form>
 
-<p>Não tem conta? <a href="#">Cadastre-se</a></p>
+<p>Não tem conta? <a href="{{url_for('cadastro')}}">Cadastre-se</a></p>
 {% endblock %}
