@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Sistema de Filmes{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="">
 </head>
 <body>
 
 <header>
     <h1>Sistema de Cadastro de Filmes</h1>
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Cadastrar Filme</a>
+        <a href="{{url_for('inicio')}}">Início</a>
+        <a href="{{url_for('cadastro')}}">Cadastro</a>
+        <a href="{{url_for('login')}}">Login</a>
         <a href="#">Sair</a>
-    </nav>
+</nav>
 </header>
 
 <main>
