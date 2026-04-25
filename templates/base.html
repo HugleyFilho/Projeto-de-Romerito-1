@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema de Filmes{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Sistema de Cadastro de Filmes</h1>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Cadastrar Filme</a>
+        <a href="#">Sair</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2026 - Projeto Flask</p>
+</footer>
+
+</body>
+</html>
