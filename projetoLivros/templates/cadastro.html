@@ -1,0 +1,40 @@
+{% extends 'baseForm.html' %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+<div class="container-tela">
+    <div class="painel-esquerdo">
+        <div class="circulo c1"></div>
+        <div class="circulo c2"></div>
+        <div class="circulo c3"></div>
+        <div class="circulo c4"></div>
+
+        <div class="conteudo-texto">
+            <h2>Sua próxima grande história começa aqui</h2>
+            <p>Descubra milhares de livros e novos mundos</p>
+        </div>
+    </div>
+
+    <div class="caixaForm">
+        {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alerta-flash">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+        <h1>Cadastro</h1>
+        <form action="" method="POST">
+            <input type="text" name="nome" id="nome" placeholder="Nome de Usuário" required>
+            <input type="email" name="email" id="email" placeholder="E-mail" required>
+            <input type="password" name="senha" id="senha" placeholder="Senha" required>
+            <input type="password" name="confirmar_senha" id="confirmar_senha" placeholder="Confirmar Senha" required>
+
+            <p>Ja tem uma conta? <a href="{{ url_for('login') }}">clique aqui</a></p>
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

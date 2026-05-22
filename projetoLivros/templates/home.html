@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}Início - Minha Livraria{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-container">
+            {% for message in messages %}
+                <div class="flash-message">
+                    <span>{{ message }}</span>
+                    <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+
+<div class="container-vitrine">
+    
+    <section class="banner-promocional">
+        <div class="banner-conteudo">
+            <span class="tag-fundo">Oferta da Semana</span>
+            <h2>Feira dos Clássicos</h2>
+            <p>Leve 3 e pague 2 em toda a seleção de literatura clássica.</p>
+            <a href="" class="btn-principal btn-banner">Ver Livros</a>
+        </div>
+    </section>
+
+    <section class="prateleira-livros">
+        <h2 class="titulo-secao">Mais Vendidos</h2>
+        
+        <div class="lista-livros">
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/O poder do hábito.jpg " alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>O Poder do Hábito</h3>
+                    <p class="autor">Charles Duhigg</p>
+                    <p class="preco">R$ 49,90</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/corte de espinhos.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>Corte de Espinhos e Rosas</h3>
+                    <p class="autor">Sarah J. Maas</p>
+                    <p class="preco">R$ 54,90</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/O senhor.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>O Senhor dos Anéis</h3>
+                    <p class="autor">J.R.R. Tolkien</p>
+                    <p class="preco">R$ 89,90</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/Habitos atômicos.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>Hábitos Atômicos</h3>
+                    <p class="autor">James Clear</p>
+                    <p class="preco">R$ 45,00</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+             <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/Tecno.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>Tecnofeudalismo</h3>
+                    <p class="autor">Yanis Varoufakis</p>
+                    <p class="preco">R$ 53,86</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/É assim que acab.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>É Assim que Acaba</h3>
+                    <p class="autor">Colleen Hoover</p>
+                    <p class="preco">R$ 39,87</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/A hipótese do amor.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>A hipótese do amor</h3>
+                    <p class="autor">Ali Hazelwood</p>
+                    <p class="preco">R$ 46,26 </p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/Omori.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>Omori - volume 1</h3>
+                    <p class="autor">OMOCAT</p>
+                    <p class="preco">R$ 39,75</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+
+</div>
+{% endblock %}
