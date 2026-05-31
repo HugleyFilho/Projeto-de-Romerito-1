@@ -33,8 +33,8 @@ Além disso, o projeto possui grande importância acadêmica, pois permite a apl
 
 ## Tecnologias Utilizadas
 
-- Python 🐍  
-- Flask 🌐  
+- Python 
+- Flask 
 - HTML5  
 - CSS3  
 - JavaScript  
