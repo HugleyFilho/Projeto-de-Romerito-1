@@ -31,7 +31,7 @@ Além disso, o projeto possui grande importância acadêmica, pois permite a apl
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Python 🐍  
 - Flask 🌐  
@@ -41,7 +41,7 @@ Além disso, o projeto possui grande importância acadêmica, pois permite a apl
 
 ---
 
-## 📌 Funcionalidades
+## Funcionalidades
 
 - Listagem de livros por categoria  
 - Página de destaques (Home)  
