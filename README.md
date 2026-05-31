@@ -7,19 +7,45 @@ Componentes:
 -  Hugley Douglas Dias Filho
 -  Carlos Alberto de Medeiros Alves Junior
 
-## Descrição do objetivo da proposta
+# Site de Livros - Flask
 
-O projeto consiste no desenvolvimento de uma aplicação web utilizando Python e Flask, com o objetivo de permitir que o próprio usuário cadastre filmes em um site de forma simples e organizada.
+## Descrição do Projeto
 
-A proposta é criar um sistema onde cada filme tenha um cadastro único, evitando registros duplicados. Após o cadastro, o filme será exibido na página principal do site, mostrando suas principais informações, como título, ano de lançamento, gênero, sinopse, avaliação e outras características relevantes.
+Este projeto consiste no desenvolvimento de uma aplicação web utilizando Python e Flask, com o objetivo de permitir que o usuário explore, visualize e organize livros em uma plataforma digital de forma simples e intuitiva.
 
-O sistema busca resolver o problema da falta de organização no registro de filmes, oferecendo uma plataforma centralizada onde o usuário pode cadastrar, visualizar, editar e excluir informações de maneira prática.
-A página inicial funcionará como uma vitrine ou catálogo, apresentando todos os filmes cadastrados com suas respectivas informações, facilitando a consulta e a navegação pelos conteúdos disponíveis.
+A aplicação funciona como um catálogo de livros online, onde os itens são organizados por categorias como romance, ação, fantasia, terror e mangás. Cada livro contém informações como título, autor, categoria, preço e imagem de capa, facilitando a navegação e a descoberta de novos conteúdos.
+
+O sistema também permite que o usuário interaja com os livros através de funcionalidades como carrinho de compras e finalização de compra. Os livros adquiridos são armazenados na seção “Meus Livros”, permitindo que o usuário visualize seus itens comprados.
+
+A página inicial funciona como uma vitrine de destaques, enquanto a página “Descobrir” organiza todos os livros por categoria, proporcionando uma experiência de navegação mais clara e estruturada.
+
+---
 
 ## Justificativa
 
-A criação deste sistema se justifica pela necessidade de organizar e gerenciar informações sobre filmes e séries de maneira prática e estruturada. Muitas pessoas utilizam anotações informais ou múltiplas plataformas, o que pode gerar confusão, perda de dados e duplicidade de informações.
+A criação deste sistema se justifica pela necessidade de organizar e facilitar o acesso a livros em ambientes digitais, já que muitas plataformas não oferecem uma estrutura simples e intuitiva para navegação por categorias e gerenciamento de compras.
 
-Com essa aplicação, é possível centralizar os dados em um único sistema, garantindo maior controle, facilidade de acesso e melhor experiência de uso. A implementação de um cadastro único por título também contribui para a integridade das informações, evitando redundâncias.
+Com essa aplicação, o usuário pode explorar diferentes gêneros literários, adicionar livros ao carrinho e acompanhar suas compras em um único sistema centralizado.
 
-Além disso, o projeto possui grande relevância acadêmica, pois permite aplicar conceitos importantes de desenvolvimento web, como uso de frameworks, integração com banco de dados, validação de dados e construção de interfaces. Dessa forma, contribui tanto para a resolução de um problema prático quanto para o aprendizado técnico dos desenvolvedores envolvidos.
+Além disso, o projeto possui grande importância acadêmica, pois permite a aplicação de conceitos fundamentais do desenvolvimento web com Flask, como rotas, templates, manipulação de sessões, integração com banco de dados e estruturação de interfaces.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Python 🐍  
+- Flask 🌐  
+- HTML5  
+- CSS3  
+- JavaScript  
+
+---
+
+## 📌 Funcionalidades
+
+- Listagem de livros por categoria  
+- Página de destaques (Home)  
+- Página “Descobrir” com catálogo completo  
+- Carrinho de compras  
+- Sistema de login e cadastro  
+- Página “Meus Livros” para itens comprados  
