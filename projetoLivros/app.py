@@ -17,9 +17,11 @@ def cadastro():
         nome = request.form.get('nome')
         senha = request.form.get('senha')
         confirmar_senha = request.form.get('confirmar_senha')
+
         if senha != confirmar_senha:
             flash('As senhas não coincidem!')
             return redirect(url_for('cadastro'))
+
         email = request.form.get('email')
 
         conexao = criar_conexao()
@@ -28,9 +30,12 @@ def cadastro():
         user = resultado.fetchone()
 
         if not user:
-            cursor = conexao.execute("INSERT INTO usuarios(nome, senha, email) VALUES (?,?,?)", (nome, senha, email))
+            cursor = conexao.execute(
+                "INSERT INTO usuarios(nome, senha, email) VALUES (?,?,?)",
+                (nome, senha, email)
+            )
             conexao.commit()
-            
+
             usuario_id = cursor.lastrowid
             conexao.close()
 
@@ -40,17 +45,18 @@ def cadastro():
             flash(f'Cadastro realizado com sucesso! Bem-vindo, {nome}!')
             return redirect(url_for('home'))
         else:
-            conexao.close() 
+            conexao.close()
             flash('usuário existente')
             return redirect(url_for('cadastro'))
 
     return render_template('cadastro.html')
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if 'user' in session:
-        return redirect(url_for('home')) 
-        
+        return redirect(url_for('home'))
+
     if request.method == 'POST':
         email = request.form.get('email')
         senha = request.form.get('senha')
@@ -59,7 +65,7 @@ def login():
 
         resultado = conexao.execute("SELECT * FROM usuarios WHERE email = ?", (email,))
         user = resultado.fetchone()
-        conexao.close() 
+        conexao.close()
 
         if user and user['senha'] == senha:
             session['user'] = user['nome']
@@ -68,8 +74,9 @@ def login():
         else:
             flash('E-mail ou senha incorreto(s)')
             return redirect(url_for('login'))
-    
+
     return render_template('login.html')
+
 
 @app.route("/home")
 def home():
@@ -80,17 +87,17 @@ def home():
 
 @app.route("/descobrir")
 def descobrir():
-    return render_template('descobrir.html')
+    return render_template("descobrir.html")
 
-@app.route("/meus_livros")
-def meus_livros():
-    return render_template('meus_livros.html')
 
-@app.route("/favoritos")
-def favoritos():
-    return render_template('favoritos.html')
+@app.route("/meuslivros")
+def meuslivros():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+    return render_template("meuslivros.html")
 
-@app.route('/logout')
+
+@app.route("/logout")
 def logout():
     session.pop('user', None)
     session.pop('id', None)
