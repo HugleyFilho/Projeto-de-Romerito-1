@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-vitrine">
+
+    <h1 class="titulo-secao">Meus Livros</h1>
+
+    <div class="lista-livros">
+
+        {% for livro in livros %}
+        <div class="card-livro">
+            <div class="info-livro">
+                <h3>{{ livro }}</h3>
+                <span class="categoria-livro">Comprado</span>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

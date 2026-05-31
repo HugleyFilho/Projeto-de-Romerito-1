@@ -1,97 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Minha Estante{% endblock %}</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     {% block extra_css %}{% endblock %}
 </head>
-
 <body>
 
     <div class="container-home">
-
+        
         {% block sidebar %}
-        <aside class="sidebar">
-            <div class="logo">
-                <h2> Story<span>App</span></h2>
-            </div>
-            <nav class="menu">
-                <a href="{{ url_for('home') }}" class="{{ 'active' if request.endpoint == 'home' else '' }}">
-                    Início
-                </a>
-
-                <a href="{{ url_for('meus_livros') }}"
-                    class="{{ 'active' if request.endpoint == 'meus_livros' else '' }}">
-                    Meus Livros
-                </a>
-
-                <a href="{{ url_for('descobrir') }}" class="{{ 'active' if request.endpoint == 'descobrir' else '' }}">
-                    Descobrir
-                </a>
-
-                <a href="{{ url_for('favoritos') }}" class="{{ 'active' if request.endpoint == 'favoritos' else '' }}">
-                    Favoritos
-                </a>
-            </nav>
-            <div class="usuario-logado">
-                <p>Olá, <strong>{{ session.get('user', 'Visitante') }}</strong></p>
-
-                <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
-            </div>
-        </aside>
-        {% endblock %}
+<aside class="sidebar">
+    <div class="logo">
+        <h2> Story<span>App</span></h2>
+    </div>
+    <nav class="menu">
+    <a href="/home">Início</a>
+    <a href="/descobrir">Descobrir</a>
+    <a href="/meuslivros">Meus Livros</a>
+</nav>
+    <a href="/carrinho" class="btn-carrinho-topo">
+        🛒 Carrinho
+    </a>
+    <div class="usuario-logado">
+        <p>Olá, <strong>{{ session.get('user', 'Visitante') }}</strong></p>
+        
+        <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
+    </div>
+</aside>
+{% endblock %}
 
         <main class="conteudo-principal">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
             <div class="flash-container">
                 {% for message in messages %}
-                <div class="flash-message">
-                    <span>{{ message }}</span>
-                    <button class="flash-close">&times;</button>
-                </div>
+                    <div class="flash-message">
+                        <span>{{ message }}</span>
+                        <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+                    </div>
                 {% endfor %}
             </div>
-            {% endif %}
-            {% endwith %}
+        {% endif %}
+    {% endwith %}
 
-            {% block content %}{% endblock %}
-
-            <div id="icone-carrinho" onclick="alternarCarrinho()">
-                <span>CARRINHO</span>
-                <span id="contador-carrinho">0</span>
-            </div>
-
-            <div id="carrinho-lateral" class="carrinho-fechado">
-                <div class="cabecalho-carrinho">
-                    <h3>Meu Carrinho</h3>
-                    <button class="fechar-carrinho" onclick="alternarCarrinho()">FECHAR</button>
-                </div>
-
-                <div id="itens-carrinho">
-                    <p class="mensagem-vazia">Seu carrinho está vazio.</p>
-                </div>
-
-                <div class="rodape-carrinho">
-                    <div class="total-carrinho">
-                        <span>Total:</span>
-                        <span id="preco-total">R$ 0,00</span>
-                    </div>
-                    <button class="botao-finalizar">Finalizar Compra</button>
-                </div>
-            </div>
-
-            <div id="fundo-escuro" onclick="alternarCarrinho()"></div>
-        </main>
+    {% block content %}{% endblock %}
+</main>
 
     </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block extra_js %}{% endblock %}
-</body>
 
+    <script>
+    const favoritos = document.querySelectorAll('.btn-favorito')
+
+    favoritos.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('ativo')
+        })
+    })
+</script>
+
+</body>
 </html>

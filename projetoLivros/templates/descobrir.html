@@ -1,415 +1,249 @@
-{% extends 'base.html' %}
-
-{% block title %}Meus Livros{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
 
-<section class="prateleira-livros">
-    <h2 class="titulo-secao">Mais vendidos</h2>
+<div class="container-vitrine">
 
-     <div class="lista-livros">
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O poder do hábito.jpg " alt="Capa do Livro">
+    <div class="prateleira-livros">
+
+        <h1 class="titulo-secao">Descobrir Livros</h1>
+
+        <div class="categoria">
+
+            <h2>Fantasia</h2>
+
+            <div class="lista-livros">
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/harry.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Harry Potter e a Pedra Filosofal</h3>
+                        <p class="autor">J.K Rowling</p>
+                        <span class="categoria-livro">Fantasia</span>
+                        <p class="preco">R$ 39,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Harry Potter" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="info-livro">
-                    <h3>O Poder do Hábito</h3>
-                    <p class="autor">Charles Duhigg</p>
-                    <p class="preco">R$ 49,90</p>
-                    <button class="btn-principal">Comprar</button>
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/O senhor.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>O Senhor dos Anéis</h3>
+                        <p class="autor">J.R.R Tolkien</p>
+                        <span class="categoria-livro">Fantasia</span>
+                        <p class="preco">R$ 59,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/O Senhor dos Anéis" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/corte de espinhos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Corte de Espinhos e Rosas</h3>
-                    <p class="autor">Sarah J. Maas</p>
-                    <p class="preco">R$ 54,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O senhor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>O Senhor dos Anéis</h3>
-                    <p class="autor">J.R.R. Tolkien</p>
-                    <p class="preco">R$ 89,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Habitos atômicos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Hábitos Atômicos</h3>
-                    <p class="autor">James Clear</p>
-                    <p class="preco">R$ 45,00</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-             <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Tecno.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Tecnofeudalismo</h3>
-                    <p class="autor">Yanis Varoufakis</p>
-                    <p class="preco">R$ 53,86</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/É assim que acab.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>É Assim que Acaba</h3>
-                    <p class="autor">Colleen Hoover</p>
-                    <p class="preco">R$ 39,87</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/A hipótese do amor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>A hipótese do amor</h3>
-                    <p class="autor">Ali Hazelwood</p>
-                    <p class="preco">R$ 46,26 </p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Omori.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Omori - volume 1</h3>
-                    <p class="autor">OMOCAT</p>
-                    <p class="preco">R$ 39,75</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
         </div>
-</section>
 
-<section class="prateleira-livros">
-    <h2 class="titulo-secao">Romance</h2>
+        <div class="categoria">
 
-     <div class="lista-livros">
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O poder do hábito.jpg " alt="Capa do Livro">
+            <h2>Romance</h2>
+
+            <div class="lista-livros">
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/é assim.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>É Assim Que Acaba</h3>
+                        <p class="autor">Colleen Hoover</p>
+                        <span class="categoria-livro">Romance</span>
+                        <p class="preco">R$ 34,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/É Assim Que Acaba" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="info-livro">
-                    <h3>O Poder do Hábito</h3>
-                    <p class="autor">Charles Duhigg</p>
-                    <p class="preco">R$ 49,90</p>
-                    <button class="btn-principal">Comprar</button>
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/a culpa.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>A Culpa é das Estrelas</h3>
+                        <p class="autor">John Green</p>
+                        <span class="categoria-livro">Romance</span>
+                        <p class="preco">R$ 29,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/A Culpa é das Estrelas" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/corte de espinhos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Corte de Espinhos e Rosas</h3>
-                    <p class="autor">Sarah J. Maas</p>
-                    <p class="preco">R$ 54,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O senhor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>O Senhor dos Anéis</h3>
-                    <p class="autor">J.R.R. Tolkien</p>
-                    <p class="preco">R$ 89,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Habitos atômicos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Hábitos Atômicos</h3>
-                    <p class="autor">James Clear</p>
-                    <p class="preco">R$ 45,00</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-             <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Tecno.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Tecnofeudalismo</h3>
-                    <p class="autor">Yanis Varoufakis</p>
-                    <p class="preco">R$ 53,86</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/É assim que acab.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>É Assim que Acaba</h3>
-                    <p class="autor">Colleen Hoover</p>
-                    <p class="preco">R$ 39,87</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/A hipótese do amor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>A hipótese do amor</h3>
-                    <p class="autor">Ali Hazelwood</p>
-                    <p class="preco">R$ 46,26 </p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Omori.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Omori - volume 1</h3>
-                    <p class="autor">OMOCAT</p>
-                    <p class="preco">R$ 39,75</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
         </div>
-</section>
 
-<section class="prateleira-livros">
-    <h2 class="titulo-secao">Suspense</h2>
+        <div class="categoria">
 
-     <div class="lista-livros">
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O poder do hábito.jpg " alt="Capa do Livro">
+            <h2>Mangás</h2>
+
+            <div class="lista-livros">
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/attack.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Attack on Titan</h3>
+                        <p class="autor">Hajime Isayama</p>
+                        <span class="categoria-livro">Mangás</span>
+                        <p class="preco">R$ 29,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Attack on Titan" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-livro">
-                    <h3>O Poder do Hábito</h3>
-                    <p class="autor">Charles Duhigg</p>
-                    <p class="preco">R$ 49,90</p>
-                    <button class="btn-principal">Comprar</button>
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/demon.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Demon Slayer</h3>
+                        <p class="autor">Koyoharu Gotouge</p>
+                        <span class="categoria-livro">Mangás</span>
+                        <p class="preco">R$ 24,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Demon Slayer" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/corte de espinhos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Corte de Espinhos e Rosas</h3>
-                    <p class="autor">Sarah J. Maas</p>
-                    <p class="preco">R$ 54,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O senhor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>O Senhor dos Anéis</h3>
-                    <p class="autor">J.R.R. Tolkien</p>
-                    <p class="preco">R$ 89,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Habitos atômicos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Hábitos Atômicos</h3>
-                    <p class="autor">James Clear</p>
-                    <p class="preco">R$ 45,00</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-             <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Tecno.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Tecnofeudalismo</h3>
-                    <p class="autor">Yanis Varoufakis</p>
-                    <p class="preco">R$ 53,86</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/É assim que acab.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>É Assim que Acaba</h3>
-                    <p class="autor">Colleen Hoover</p>
-                    <p class="preco">R$ 39,87</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/A hipótese do amor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>A hipótese do amor</h3>
-                    <p class="autor">Ali Hazelwood</p>
-                    <p class="preco">R$ 46,26 </p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Omori.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Omori - volume 1</h3>
-                    <p class="autor">OMOCAT</p>
-                    <p class="preco">R$ 39,75</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
         </div>
-</section>
 
-<section class="prateleira-livros">
-    <h2 class="titulo-secao">Aventura</h2>
+        <div class="categoria">
 
-     <div class="lista-livros">
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O poder do hábito.jpg " alt="Capa do Livro">
+            <h2>Terror</h2>
+
+            <div class="lista-livros">
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/dracula.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Drácula</h3>
+                        <p class="autor">Bram Stoker</p>
+                        <span class="categoria-livro">Terror</span>
+                        <p class="preco">R$ 27,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Drácula" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-livro">
-                    <h3>O Poder do Hábito</h3>
-                    <p class="autor">Charles Duhigg</p>
-                    <p class="preco">R$ 49,90</p>
-                    <button class="btn-principal">Comprar</button>
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/coraline.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Coraline</h3>
+                        <p class="autor">Neil Gaiman</p>
+                        <span class="categoria-livro">Terror</span>
+                        <p class="preco">R$ 31,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Coraline" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/corte de espinhos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Corte de Espinhos e Rosas</h3>
-                    <p class="autor">Sarah J. Maas</p>
-                    <p class="preco">R$ 54,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/O senhor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>O Senhor dos Anéis</h3>
-                    <p class="autor">J.R.R. Tolkien</p>
-                    <p class="preco">R$ 89,90</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Habitos atômicos.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Hábitos Atômicos</h3>
-                    <p class="autor">James Clear</p>
-                    <p class="preco">R$ 45,00</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-             <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Tecno.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Tecnofeudalismo</h3>
-                    <p class="autor">Yanis Varoufakis</p>
-                    <p class="preco">R$ 53,86</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/É assim que acab.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>É Assim que Acaba</h3>
-                    <p class="autor">Colleen Hoover</p>
-                    <p class="preco">R$ 39,87</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/A hipótese do amor.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>A hipótese do amor</h3>
-                    <p class="autor">Ali Hazelwood</p>
-                    <p class="preco">R$ 46,26 </p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
-
-            <div class="card-livro">
-                <div class="capa-livro">
-                    <img src="static/img/Omori.jpg" alt="Capa do Livro">
-                </div>
-                <div class="info-livro">
-                    <h3>Omori - volume 1</h3>
-                    <p class="autor">OMOCAT</p>
-                    <p class="preco">R$ 39,75</p>
-                    <button class="btn-principal">Comprar</button>
-                </div>
-            </div>
         </div>
-</section>
 
-{% endblock%}
+        <div class="categoria">
+
+            <h2>Ação</h2>
+
+            <div class="lista-livros">
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/percy.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Percy Jackson</h3>
+                        <p class="autor">Rick Riordan</p>
+                        <span class="categoria-livro">Ação</span>
+                        <p class="preco">R$ 32,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Percy Jackson" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-livro">
+
+                    <div class="capa-livro">
+                        <img src="static/img/jogos.jpg">
+                    </div>
+
+                    <div class="info-livro">
+                        <h3>Jogos Vorazes</h3>
+                        <p class="autor">Suzanne Collins</p>
+                        <span class="categoria-livro">Ação</span>
+                        <p class="preco">R$ 36,90</p>
+
+                        <div class="acoes-livro">
+                            <a href="/add_carrinho/Jogos Vorazes" class="btn-principal">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
