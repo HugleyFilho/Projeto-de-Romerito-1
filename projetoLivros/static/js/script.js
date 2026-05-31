@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const flashes = document.querySelectorAll('.flash-message');
     flashes.forEach(msg => {
-
         setTimeout(() => {
             msg.style.transition = "opacity 0.5s ease";
             msg.style.opacity = "0";
@@ -12,14 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const botoesComprar = document.querySelectorAll('.btn-principal');
     
     botoesComprar.forEach(botao => {
-
         if (botao.classList.contains('btn-banner')) return;
 
         botao.addEventListener('click', (e) => {
             const card = e.target.closest('.card-livro');
             const titulo = card.querySelector('h3').innerText;
             
-
             const textoOriginal = botao.innerText;
             botao.innerText = "Adicionado!";
 
@@ -30,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     const cards = document.querySelectorAll('.card-livro');
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -40,6 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('mouseleave', () => {
             card.style.transform = "translateY(0)";
         });
+    });
+
+    document.querySelectorAll('.card-livro').forEach(card => {
+        const botao = card.querySelector('.btn-principal');
+        const precoTexto = card.querySelector('.preco');
+        
+        if (!precoTexto) return;
+        
+        const titulo = card.querySelector('h3').innerText;
+        const preco = parseFloat(precoTexto.innerText.replace('R$', '').replace(',', '.').trim());
+
+        botao.addEventListener('click', () => adicionarAoCarrinho(titulo, preco));
     });
 });
 
@@ -93,15 +101,23 @@ function removerItem(posicao) {
     atualizarInterface();
 }
 
-// Conectar com os botões de compra da página
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.card-livro').forEach(card => {
-        const botao = card.querySelector('.btn-principal');
-        const titulo = card.querySelector('h3').innerText;
-        const precoTexto = card.querySelector('.preco').innerText;
-        // Converte "R$ 49,90" para o número 49.90
-        const preco = parseFloat(precoTexto.replace('R$', '').replace('.', '').replace(',', '.').trim());
+async function finalizarCompra() {
+    if (listaProdutos.length === 0) {
+        alert("Carrinho vazio!");
+        return;
+    }
 
-        botao.addEventListener('click', () => adicionarAoCarrinho(titulo, preco));
+    const resposta = await fetch('/finalizar_compra', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ livros: listaProdutos }),
     });
-});
+
+    const resultado = await resposta.json();
+
+    if (resposta.ok && resultado.status === 'sucesso') {
+        listaProdutos = [];
+        atualizarInterface();
+        window.location.href = "/meus_livros";
+    }
+}
