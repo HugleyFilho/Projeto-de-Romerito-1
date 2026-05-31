@@ -1,0 +1,39 @@
+{% extends 'baseForm.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container-tela">
+    <div class="painel-esquerdo">
+        <div class="circulo c1"></div>
+        <div class="circulo c2"></div>
+        <div class="circulo c3"></div>
+        <div class="circulo c4"></div>
+
+        <div class="conteudo-texto">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Faça login para continuar sua leitura e acessar sua estante.</p>
+        </div>
+    </div>
+
+    <div class="caixaForm">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alerta-flash">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="POST">
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+
+            <p>Não tem uma conta? <a href="{{ url_for('cadastro') }}">clique aqui</a></p>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

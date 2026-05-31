@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Meus Livros{% endblock %}
+
+{% block content %}
+
+<div class="container-vitrine">
+
+    <h1 class="titulo-secao">Meus Livros Comprados</h1>
+
+    <div class="lista-livros">
+
+        {% if livros %}
+            {% for livro in livros %}
+            <div class="card-livro">
+                <div class="info-livro">
+                    <h3>
+                        {{ livro['titulo'] }} 
+                        {% if livro['quantidade'] > 1 %}
+                            ({{ livro['quantidade'] }})
+                        {% endif %}
+                    </h3>
+                    <p class="categoria-livro">Disponível na sua estante</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="mensagem-vazia" style="color: #a5a5a5; font-size: 16px;">
+                Você ainda não possui nenhum livro comprado.
+            </p>
+        {% endif %}
+
+    </div>
+
+    <a href="{{ url_for('descobrir') }}" class="btn-principal" style="margin-top: 20px; width: auto; text-align: center;">
+        Descobrir Novos Livros
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Carrinho{% endblock %}
+
+{% block content %}
+
+<div class="container-vitrine">
+
+    <h1 class="titulo-secao">Carrinho</h1>
+
+    <div class="lista-livros">
+
+        {% for livro in session.get('carrinho', []) %}
+        <div class="card-livro">
+            <div class="info-livro">
+                <h3>{{ livro }}</h3>
+                <p class="preco">No carrinho</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <button onclick="finalizarCompra()" class="btn-principal" style="margin-top: 20px; width: auto;">
+        Finalizar Compra
+    </button>
+
+</div>
+
+{% endblock %}
