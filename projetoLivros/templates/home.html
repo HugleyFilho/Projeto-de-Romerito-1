@@ -1,128 +1,137 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title %}Início - Minha Livraria{% endblock %}
 
 {% block content %}
 
-<div class="container-vitrine">
-
-    <div class="banner-promocional">
-        <div class="banner-conteudo">
-            <span class="tag-fundo">NOVOS LIVROS</span>
-            <h2>Explore novos mundos</h2>
-            <p>Descubra livros incríveis adicionados recentemente.</p>
-            <a href="/descobrir" class="btn-principal btn-banner">Descobrir</a>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-container">
+            {% for message in messages %}
+                <div class="flash-message">
+                    <span>{{ message }}</span>
+                    <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+                </div>
+            {% endfor %}
         </div>
-    </div>
+    {% endif %}
+{% endwith %}
 
-    <div class="prateleira-livros">
-        <h2 class="titulo-secao">Livros em Destaque</h2>
 
+<div class="container-vitrine">
+    
+    <section class="banner-promocional">
+        <div class="banner-conteudo">
+            <span class="tag-fundo">Venha expandir seus horizontes</span>
+            <h2>Venha Conferir!</h2>
+            <p>Venha na página de livros para conferir diversos tipos de litura!</p>
+            <a href="{{ url_for('descobrir') }}" class="btn-principal btn-banner">Descobrir</a>
+        </div>
+    </section>
+
+    <section class="prateleira-livros">
+        <h2 class="titulo-secao">Mais Vendidos</h2>
+        
         <div class="lista-livros">
-
             <div class="card-livro">
                 <div class="capa-livro">
-                    <img src="static/img/harry.jpg">
+                    <img src="static/img/O poder do hábito.jpg " alt="Capa do Livro">
                 </div>
-
                 <div class="info-livro">
-                    <h3>Harry Potter e a Pedra Filosofal</h3>
-                    <p class="autor">J.K Rowling</p>
-                    <span class="categoria-livro">Fantasia</span>
-                    <p class="preco">R$ 39,90</p>
-
-                    <div class="acoes-livro">
-                        <a href="/add_carrinho/Harry Potter" class="btn-principal">Comprar</a>
-                    </div>
+                    <h3>O Poder do Hábito</h3>
+                    <p class="autor">Charles Duhigg</p>
+                    <p class="preco">R$ 49,90</p>
+                    <button class="btn-principal">Comprar</button>
                 </div>
             </div>
 
             <div class="card-livro">
                 <div class="capa-livro">
-                    <img src="static/img/attack.jpg">
+                    <img src="static/img/corte de espinhos.jpg" alt="Capa do Livro">
                 </div>
-
                 <div class="info-livro">
-                    <h3>Attack on Titan</h3>
-                    <p class="autor">Hajime Isayama</p>
-                    <span class="categoria-livro">Mangás</span>
-                    <p class="preco">R$ 29,90</p>
-
-                    <div class="acoes-livro">
-                        <a href="/add_carrinho/Attack on Titan" class="btn-principal">Comprar</a>
-                    </div>
+                    <h3>Corte de Espinhos e Rosas</h3>
+                    <p class="autor">Sarah J. Maas</p>
+                    <p class="preco">R$ 54,90</p>
+                    <button class="btn-principal">Comprar</button>
                 </div>
             </div>
 
             <div class="card-livro">
                 <div class="capa-livro">
-                    <img src="static/img/O senhor.jpg">
+                    <img src="static/img/O senhor.jpg" alt="Capa do Livro">
                 </div>
-
                 <div class="info-livro">
                     <h3>O Senhor dos Anéis</h3>
-                    <p class="autor">J.R.R Tolkien</p>
-                    <span class="categoria-livro">Fantasia</span>
-                    <p class="preco">R$ 59,90</p>
-
-                    <div class="acoes-livro">
-                        <a href="/add_carrinho/O Senhor dos Anéis" class="btn-principal">Comprar</a>
-                    </div>
+                    <p class="autor">J.R.R. Tolkien</p>
+                    <p class="preco">R$ 89,90</p>
+                    <button class="btn-principal">Comprar</button>
                 </div>
             </div>
 
             <div class="card-livro">
                 <div class="capa-livro">
-                    <img src="static/img/é assim.jpg">
+                    <img src="static/img/Habitos atômicos.jpg" alt="Capa do Livro">
                 </div>
-
                 <div class="info-livro">
-                    <h3>É Assim Que Acaba</h3>
+                    <h3>Hábitos Atômicos</h3>
+                    <p class="autor">James Clear</p>
+                    <p class="preco">R$ 45,00</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+             <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/Tecno.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>Tecnofeudalismo</h3>
+                    <p class="autor">Yanis Varoufakis</p>
+                    <p class="preco">R$ 53,86</p>
+                    <button class="btn-principal">Comprar</button>
+                </div>
+            </div>
+
+            <div class="card-livro">
+                <div class="capa-livro">
+                    <img src="static/img/É assim que acab.jpg" alt="Capa do Livro">
+                </div>
+                <div class="info-livro">
+                    <h3>É Assim que Acaba</h3>
                     <p class="autor">Colleen Hoover</p>
-                    <span class="categoria-livro">Romance</span>
-                    <p class="preco">R$ 34,90</p>
-
-                    <div class="acoes-livro">
-                        <a href="/add_carrinho/É Assim Que Acaba" class="btn-principal">Comprar</a>
-                    </div>
+                    <p class="preco">R$ 39,87</p>
+                    <button class="btn-principal">Comprar</button>
                 </div>
             </div>
 
             <div class="card-livro">
                 <div class="capa-livro">
-                    <img src="static/img/dracula.jpg">
+                    <img src="static/img/A hipótese do amor.jpg" alt="Capa do Livro">
                 </div>
-
                 <div class="info-livro">
-                    <h3>Drácula</h3>
-                    <p class="autor">Bram Stoker</p>
-                    <span class="categoria-livro">Terror</span>
-                    <p class="preco">R$ 27,90</p>
-
-                    <div class="acoes-livro">
-                        <a href="/add_carrinho/Drácula" class="btn-principal">Comprar</a>
-                    </div>
+                    <h3>A hipótese do amor</h3>
+                    <p class="autor">Ali Hazelwood</p>
+                    <p class="preco">R$ 46,26 </p>
+                    <button class="btn-principal">Comprar</button>
                 </div>
             </div>
 
             <div class="card-livro">
                 <div class="capa-livro">
-                    <img src="static/img/percy.jpg">
+                    <img src="static/img/Omori.jpg" alt="Capa do Livro">
                 </div>
-
                 <div class="info-livro">
-                    <h3>Percy Jackson</h3>
-                    <p class="autor">Rick Riordan</p>
-                    <span class="categoria-livro">Ação</span>
-                    <p class="preco">R$ 32,90</p>
-
-                    <div class="acoes-livro">
-                        <a href="/add_carrinho/Percy Jackson" class="btn-principal">Comprar</a>
-                    </div>
+                    <h3>Omori - volume 1</h3>
+                    <p class="autor">OMOCAT</p>
+                    <p class="preco">R$ 39,75</p>
+                    <button class="btn-principal">Comprar</button>
                 </div>
             </div>
-
         </div>
-    </div>
+
+        
+    </section>
 
 </div>
-
-{% endblock content %}
+{% endblock %}
